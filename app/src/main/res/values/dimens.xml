@@ -1,0 +1,57 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="rounded_corner_stroke_width">1.33dp</dimen>
+    <dimen name="rounded_corner_stroke_radius">5dp</dimen>
+    <dimen name="rounded_corner_button_stroke_radius">12dp</dimen>
+
+    <dimen name="padding_15">15dp</dimen>
+    <dimen name="padding_25">25dp</dimen>
+    <dimen name="padding_75">75dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_7">7dp</dimen>
+    <dimen name="padding_5">5dp</dimen>
+
+    <dimen name="text_input_layout_padding">8dp</dimen>
+    <dimen name="edittext_padding_left">10dp</dimen>
+    <dimen name="edittext_marin_top">15dp</dimen>
+
+
+    <dimen name="actionbar_height">65dp</dimen>
+    <dimen name="actionbar_back_height_width">32dp</dimen>
+
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_21_33">21.33dp</dimen>
+    <dimen name="margin_22_67">22.67dp</dimen>
+    <dimen name="margin_25_33">25.33dp</dimen>
+    <dimen name="margin_26_67">26.67dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
+    <dimen name="margin_56">56dp</dimen>
+    <dimen name="margin_55">55dp</dimen>
+    <dimen name="margin_70">70dp</dimen>
+    <dimen name="margin_112">100dp</dimen>
+    <dimen name="margin_114">114dp</dimen>
+    <dimen name="margin_116">116dp</dimen>
+
+    <dimen name="height_34_67">34.67dp</dimen>
+
+
+    <dimen name="old_handphone_height">26.67dp</dimen>
+    <dimen name="old_handphone_width">25.33dp</dimen>
+
+    <string name="height_width">5dp</string>
+    <dimen name="chat_height">22.67dp</dimen>
+    <dimen name="chat_width">26.67dp</dimen>
+
+    <dimen name="text_size_26_67">25sp</dimen>
+    <dimen name="text_size_21_33">20sp</dimen>
+    <dimen name="text_size_18_67">17sp</dimen>
+    <dimen name="text_size_16">15sp</dimen>
+
+</resources>
+

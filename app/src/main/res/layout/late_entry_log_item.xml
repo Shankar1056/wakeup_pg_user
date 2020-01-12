@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_10"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewReturnPg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Returning To PG by 12:30AM"
+        android:fontFamily="@font/roboto"
+        android:textSize="@dimen/text_size_18_67"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/textViewReturnPGReason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_reason"
+        android:fontFamily="@font/roboto"
+        android:textSize="@dimen/text_size_16"
+        android:layout_marginTop="@dimen/margin_8"
+        app:layout_constraintTop_toBottomOf="@+id/textViewReturnPg"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/textViewReturnPGReasonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Train Delayed"
+        android:fontFamily="@font/roboto"
+        android:textSize="@dimen/text_size_16"
+        android:layout_marginTop="@dimen/margin_8"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@+id/textViewReturnPg"
+        app:layout_constraintStart_toEndOf="@+id/textViewReturnPGReason"/>
+
+    <Button
+        android:id="@+id/textViewDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:textSize="@dimen/text_size_18_67"
+        android:layout_marginTop="@dimen/margin_8"
+        android:fontFamily="@font/roboto"
+        android:textAllCaps="false"
+
+        android:background="@drawable/rounded_corner_trans_back"
+        android:layout_marginStart="@dimen/margin_20"
+
+        app:layout_constraintTop_toBottomOf="@+id/textViewReturnReason"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/textViewEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textSize="@dimen/text_size_18_67"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_20"
+
+        android:background="@drawable/rounded_corner_submit_button"
+        android:fontFamily="@font/roboto"
+        app:layout_constraintTop_toBottomOf="@+id/textViewReturnReason"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imageViewReason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewReturnPg"
+        app:srcCompat="@drawable/ic_check_circle_black_24dp" />
+
+    <TextView
+        android:id="@+id/textViewReturnReason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="approved"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:textSize="12sp"
+        android:textColor="@color/bland50colorBlack"
+        android:fontFamily="@font/roboto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewReason"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

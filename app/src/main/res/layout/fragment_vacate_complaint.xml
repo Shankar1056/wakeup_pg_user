@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="complaintViewModel"
+            type="com.task.pguserdemoapp.ui.vacatepg.VacateViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="@{complaintViewModel.complaintVisibility ? View.VISIBLE : View.GONE}"
+        >
+    <TextView
+        android:id="@+id/textViewVacateComplaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewUnresolved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="@dimen/margin_26_67"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:onClick="@{complaintViewModel::onUnresolvedClicked}"
+        android:text="@string/title_unresolved"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size_18_67"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/textViewVacateComplaint" />
+
+    <ImageView
+        android:id="@+id/imageViewUnresolved"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4"
+        android:minHeight="@dimen/padding_5"
+        android:background="@color/mikadoYellow"
+        android:visibility="@{complaintViewModel.unresolvedVisibility ? View.VISIBLE : View.GONE}"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewUnresolved"
+        app:layout_constraintRight_toRightOf="@+id/textViewUnresolved"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUnresolved" />
+
+    <TextView
+        android:id="@+id/textViewResolved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_26_67"
+        android:layout_marginEnd="80dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+
+        android:onClick="@{complaintViewModel::onResolvedClicked}"
+        android:text="@string/title_resolved"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size_18_67"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVacateComplaint" />
+
+    <ImageView
+        android:id="@+id/imageViewResolved"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4"
+        android:minHeight="@dimen/padding_5"
+
+        android:background="@color/mikadoYellow"
+        android:visibility="@{complaintViewModel.resolvedVisibility ? View.VISIBLE : View.GONE}"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewResolved"
+        app:layout_constraintRight_toRightOf="@+id/textViewResolved"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResolved" />
+    <FrameLayout
+        android:id="@+id/layout_frame_vacate_complain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_15"
+        android:layout_marginTop="@dimen/padding_10"
+        android:layout_marginRight="@dimen/padding_15"
+        android:paddingBottom="@dimen/padding_5"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmptyVacate" >
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/textViewEmptyVacate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_5"
+        android:layout_marginEnd="@dimen/padding_5"
+        android:layout_marginTop="@dimen/margin_8"
+        android:background="@color/colorGrey"
+        android:textSize="0.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResolved"
+        />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_16"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_editor_absoluteY="0dp">
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonVacant"
+                style="@style/FloatingButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:backgroundTint="@color/colorWhite"
+                android:clickable="true"
+                android:layout_marginBottom="?attr/actionBarSize"
+                android:onClick="@{complaintViewModel::onFloatingButtonClicked}"
+                android:src="@android:drawable/ic_input_add"
+                android:tint="@color/mikadoYellow"
+                app:borderWidth="0dp" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/layout_frame_complaint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_4"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginEnd="@dimen/margin_4"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:visibility="@{complaintViewModel.complaintFrameVisibility ? View.VISIBLE : View.GONE}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

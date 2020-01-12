@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/unresolvedComplaintEntry"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/elevation_round_transp"
+    android:elevation="8dp"
+    android:paddingBottom="@dimen/padding_10"
+    android:paddingLeft="@dimen/padding_10"
+    android:layout_marginBottom="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:id="@+id/textViewResolvedComplain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complain Name"
+        android:fontFamily="@font/roboto"
+        android:textSize="@dimen/text_size_18_67"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginStart="@dimen/margin_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resolved - "
+        android:fontFamily="@font/roboto"
+        android:textSize="@dimen/text_size_18_67"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginStart="@dimen/margin_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResolvedComplain"/>
+
+    <TextView
+        android:id="@+id/textViewResolvedBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="@dimen/text_size_18_67"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginStart="@dimen/margin_4"
+        app:layout_constraintStart_toEndOf="@+id/textViewStatus"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResolvedComplain"/>
+    <TextView
+        android:id="@+id/textViewComplaintDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Room Cleaned"
+        android:fontFamily="@font/roboto"
+        android:textSize="@dimen/text_size_18_67"
+        android:textColor="@color/colorBlack"
+        android:ellipsize="end"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginStart="@dimen/margin_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResolvedBy"/>
+    <TextView
+        android:id="@+id/textViewIssueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sample Issue date"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:textSize="13sp"
+        android:fontFamily="@font/roboto"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+        android:id="@+id/imageViewApprove"
+        android:layout_width="40dp"
+        app:srcCompat="@drawable/ic_check_circle_black_24dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:maxHeight="40dp"
+        android:maxWidth="40dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIssueDate"/>
+
+    <ImageView
+        android:id="@+id/imageViewUnresolved"
+        android:layout_width="40dp"
+        app:srcCompat="@drawable/ic_cancel_black_24dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:maxHeight="40dp"
+        android:maxWidth="40dp"
+
+        app:layout_constraintEnd_toStartOf="@+id/imageViewApprove"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIssueDate"/>
+
+    <TextView
+        android:id="@+id/textViewUnresolved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:fontFamily="@font/roboto"
+        android:text="@string/title_unresolved"
+        android:textSize="10.67sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewApproved"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewUnresolved" />
+
+    <TextView
+        android:id="@+id/textViewApproved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:fontFamily="@font/roboto"
+        android:text="@string/title_approved"
+        android:textSize="10.67sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewApprove" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

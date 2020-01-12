@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:labelVisibilityMode="labeled">
+
+    <item
+        android:id="@+id/navigation_vacate_home"
+        android:icon="@drawable/home"
+        android:contentDescription="@string/title_home"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_vacate_my_complaints"
+        android:icon="@drawable/ic_complaint_1"
+        android:contentDescription="@string/title_complaint"
+        android:title="@string/title_complaint" />
+
+    <item
+        android:id="@+id/navigation_vacate_visitor_log"
+        android:icon="@drawable/ic_log_in_1"
+        android:contentDescription="@string/title_visitor_log"
+        android:title="@string/title_visitor_log" />
+    <item
+        android:id="@+id/navigation_vacate_info"
+        android:icon="@drawable/vacate"
+        android:contentDescription="@string/title_vacate"
+        android:title="@string/title_vacate" />
+
+</menu>

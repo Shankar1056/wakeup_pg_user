@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.task.pguserdemoapp.ui.login.LoginModel" />
+
+        <variable
+            name="loginViewModel"
+            type="com.task.pguserdemoapp.ui.login.LoginViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/padding_25"
+        android:paddingTop="@dimen/padding_25"
+        android:paddingRight="@dimen/padding_25">
+
+        <ImageView
+            android:id="@+id/imageViewMyRoomKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="40dp"
+            android:maxHeight="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewMyRoom"
+            app:layout_constraintHorizontal_bias="0.67"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewMyRoom"
+            app:layout_constraintVertical_bias="0.73"
+            app:srcCompat="@drawable/room_key" />
+
+        <ImageView
+            android:id="@+id/imageViewMyRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_50"
+            android:maxWidth="60dp"
+            android:maxHeight="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewMyRoom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_location" />
+
+        <TextView
+            android:id="@+id/textViewMyRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/title_my_room"
+            android:textColor="@color/mikadoYellow"
+            android:textSize="@dimen/text_size_26_67"
+            app:layout_constraintBottom_toTopOf="@+id/text_input_layout_email"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewMyRoom" />
+
+        <TextView
+            android:id="@+id/otp_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_enter_otp"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_size_18_67"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_15"
+            android:background="@drawable/rounded_corner_trans_back"
+            android:padding="@dimen/text_input_layout_padding"
+            app:layout_constraintBottom_toTopOf="@+id/otp_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_4"
+                android:background="@android:color/transparent"
+                android:hint="@string/hint_mobile_number"
+                android:digits="@string/input_only_number"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingLeft="@dimen/edittext_padding_left"
+                android:singleLine="true"
+                android:text=""
+                app:addTextChangedListener="@{loginViewModel.getMobileNumber}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/opt_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otp_text">
+
+            <EditText
+                android:id="@+id/circular_text_view_one"
+                style="@style/circulatTextView"
+                android:text=""/>
+
+            <EditText
+                android:id="@+id/circular_text_view_two"
+                style="@style/circulatTextView"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/circular_text_view_three"
+                style="@style/circulatTextView"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/circular_text_view_four"
+                style="@style/circulatTextView"
+                android:text="" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/timer_count_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:fontFamily="@font/roboto_bold"
+            android:text="30"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_size_18_67"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/opt_layout" />
+
+        <TextView
+            android:id="@+id/submit_button"
+            style="@style/SubmitButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/title_login"
+            android:textColor="@color/bland50colorBlack"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timer_count_text_view" />
+
+        <com.task.pguserdemoapp.utilz.loader.AVLoadingIndicatorView
+            android:id="@+id/avi"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:visibility="gone"
+            app:indicatorColor="@color/colorPrimary"
+            app:indicatorName="BallSpinFadeLoaderIndicator"
+            app:layout_constraintBottom_toBottomOf="@+id/submit_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/submit_button" />
+
+
+        <TextView
+            android:id="@+id/textViewAlreadyMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/margin_20"
+            android:text="@string/title_already_member"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submit_button" />
+
+        <TextView
+            android:id="@+id/textViewLoginNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_20"
+            android:text="@string/title_login_now"
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewAlreadyMember"
+            app:layout_constraintTop_toBottomOf="@+id/submit_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

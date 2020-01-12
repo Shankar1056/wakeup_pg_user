@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="vacateViewModel"
+            type="com.task.pguserdemoapp.ui.vacatepg.VacateViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_10">
+
+    <TextView
+        android:id="@+id/textViewDetailUnresolved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Text Unresolved"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewDetailUnresolved"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/images_unresolved_demo"
+        android:layout_marginTop="@dimen/margin_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailUnresolved"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

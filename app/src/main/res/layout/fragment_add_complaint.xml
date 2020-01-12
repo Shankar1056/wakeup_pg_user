@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="fragmentaddComplaint"
+            type="com.task.pguserdemoapp.ui.vacatepg.VacateViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainVacateResolved"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_10"
+        >
+
+        <GridView
+            android:id="@+id/gridViewAddComplaint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="@dimen/margin_50"
+            android:verticalSpacing="@dimen/margin_50"
+            android:numColumns="2"
+            android:gravity="center"
+            android:text="@string/title_unresolved"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

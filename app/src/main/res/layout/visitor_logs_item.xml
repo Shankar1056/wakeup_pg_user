@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/elevation_round_transp"
+    android:elevation="8dp"
+    android:paddingBottom="@dimen/padding_10"
+    android:paddingLeft="@dimen/padding_10"
+    android:layout_marginBottom="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/imageViewLogPhoto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/ic_user_silhouette_1"
+        android:background="@color/lightGrey"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginStart="@dimen/margin_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewPhotoDownload"
+        app:srcCompat="@drawable/ic_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_marginStart="@dimen/margin_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogPhoto"/>
+
+    <ImageView
+        android:id="@+id/imageViewPhotoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_password"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewLogPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogPhoto"/>
+
+
+    <TextView
+        android:id="@+id/textViewLogVisitorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_8"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/title_visitor_name"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size_18_67"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLogPhoto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textViewStay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_16"
+        android:fontFamily="@font/roboto"
+        android:text="@string/title_staying"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size_18_67"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLogVisitorName"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLogPhoto"/>
+
+    <TextView
+        android:id="@+id/textViewLoginTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStay"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLogPhoto"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_8"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size_16"
+        android:text="Log in - 3:24 pm"/>
+
+
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:text="2 June 19"
+        android:textSize="@dimen/text_size_16"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewLogout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"
+        android:src="@android:drawable/ic_lock_power_off"
+        android:background="@drawable/round_power_off"
+       app:layout_constraintTop_toBottomOf="@+id/textViewDate"
+        />
+
+    <TextView
+        android:id="@+id/textViewLogoutTkime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_4"
+        android:fontFamily="@font/roboto"
+        android:text="Log out - 5:00 pm"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLoginTime" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

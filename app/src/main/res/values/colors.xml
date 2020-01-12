@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorYellow">#FFC107</color>
+    <color name="colorBlack">#000000</color>
+    <color name="lightGrey">#7f7f7f</color>
+    <color name="colorGrey">#E5E5E5</color>
+    <color name="colorWhite">#ffffff</color>
+
+    <color name="bland50colorBlack">#80000000</color>
+    <color name="mikadoYellow">#ffc107</color>
+    <color name="disabledYellow">#ffe882</color>
+    <color name="sealBrown">#2e001f</color>
+    <color name="snowWhite">#fafafa</color>
+    <color name="shadowColor">#29000000</color>
+</resources>

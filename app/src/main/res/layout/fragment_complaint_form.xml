@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="vacateViewModel"
+            type="com.task.pguserdemoapp.ui.vacatepg.VacateViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/padding_15"
+  >
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutLogRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+    <TextView
+        android:id="@+id/productComplaintTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:gravity="left"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Category - SubCategory"
+        android:textSize="@dimen/text_size_18_67"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/textViewProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:gravity="left"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/title_product"
+        android:textSize="@dimen/text_size_18_67"
+        android:layout_marginTop="@dimen/margin_20"
+        android:textColor="@color/bland50colorBlack"
+        app:layout_constraintTop_toBottomOf="@+id/productComplaintTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroupProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_16"
+        app:layout_constraintTop_toBottomOf="@+id/productComplaintTitle"
+        app:layout_constraintLeft_toRightOf="@+id/textViewProduct"
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+
+            android:textColor="@color/bland50colorBlack"
+            android:textSize="@dimen/text_size_18_67"
+            android:text="@string/title_working" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:textColor="@color/bland50colorBlack"
+            android:textSize="@dimen/text_size_18_67"
+            android:text="@string/title_not_working" />
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutComplaintDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_trans_back"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:minHeight="58.67dp"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupProduct"
+        >
+
+        <EditText
+            android:id="@+id/EditTextReasonComplaintDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginTop="@dimen/padding_5"
+            android:hint="@string/hint_complaint_description"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:paddingTop="@dimen/padding_5"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size_18_67"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textComplaintWordCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/100"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_55"
+        android:fontFamily="@font/roboto_medium"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutComplaintDescription"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/textViewSustainableProof"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_sustainable_proof"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginStart="@dimen/margin_8"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="@dimen/text_size_21_33"
+        app:layout_constraintTop_toBottomOf="@+id/textComplaintWordCount"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+    <TextView
+        android:id="@+id/textViewIfAny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_if_any"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginStart="@dimen/margin_8"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="@dimen/text_size_18_67"
+        app:layout_constraintTop_toBottomOf="@+id/textComplaintWordCount"
+        app:layout_constraintLeft_toRightOf="@+id/textViewSustainableProof"
+        android:textColor="@color/colorBlack"
+
+
+        />
+
+    <ImageView
+        android:id="@+id/imageViewProof"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/rounded_corner_grey"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_8"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSustainableProof" />
+
+    <ImageView
+        android:id="@+id/imageViewCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewProof"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewProof"
+        app:layout_constraintStart_toStartOf="@+id/imageViewProof"
+        app:layout_constraintTop_toTopOf="@+id/imageViewProof" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/title_tap_here"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewProof"
+        app:layout_constraintStart_toStartOf="@+id/imageViewProof"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewCamera" />
+    <Button
+        android:id="@+id/buttonComplaintFormSend"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="@dimen/margin_20"
+        android:textColor="@color/colorBlack"
+        android:background="@drawable/rounded_corner_submit_button_disable"
+        android:textAllCaps="false"
+        android:text="@string/title_send"
+        android:textSize="@dimen/text_size_21_33"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewProof" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

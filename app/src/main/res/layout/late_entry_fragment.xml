@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="fragmentLateEntry"
+            type="com.task.pguserdemoapp.ui.lateentry.LateEntryViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lateentry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_15">
+
+                <TextView
+                    android:id="@+id/textViewReturn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_26_67"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:gravity="left"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/title_return_pg"
+                    android:textSize="@dimen/text_size_18_67"
+                    android:textColor="@color/bland50colorBlack"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewEmpty"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupReturn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30.33dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewReturn"
+                    app:layout_constraintLeft_toRightOf="@+id/textViewReturn"
+                    app:layout_constraintTop_toTopOf="@+id/textViewReturn">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_15"
+
+                        android:textColor="@color/bland50colorBlack"
+                        android:textSize="@dimen/text_size_18_67"
+                        android:text="@string/title_yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_15"
+                        android:textColor="@color/bland50colorBlack"
+                        android:textSize="@dimen/text_size_18_67"
+                        android:text="@string/title_no" />
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutReason"
+                    android:layout_width="match_parent"
+                    android:layout_height="58.67dp"
+                    android:background="@drawable/rounded_corner_trans_back"
+                    android:layout_marginTop="30.33dp"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20"
+
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroupReturn"
+                   >
+
+                    <EditText
+                        android:id="@+id/editTextReason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/roboto_medium"
+                        android:hint="@string/hint_reason"
+                        android:layout_marginLeft="24dp"
+                        android:paddingTop="@dimen/padding_5"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_size_18_67"
+                        app:addTextChangedListener="@{fragmentLateEntry.getReason}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutReachingTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="58.67dp"
+                    android:background="@drawable/rounded_corner_trans_back"
+                    android:layout_marginTop="30.33dp"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20"
+
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutReason"
+                    >
+
+            <EditText
+                android:id="@+id/EditTextReachingTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/padding_5"
+                android:drawableRight="@drawable/ic_stopwatch"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_reaching_time"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:textSize="@dimen/text_size_18_67"
+               />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/buttonSend"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="46.67dp"
+                    android:textColor="@color/colorBlack"
+                    android:onClick="@{fragmentLateEntry::onSendClicked}"
+                    android:enabled="@{fragmentLateEntry.sendButtonEnable}"
+                    android:background="@{fragmentLateEntry.sendButtonEnable ? @drawable/rounded_corner_submit_button: @drawable/rounded_corner_submit_button_disable }"
+                    android:textAllCaps="false"
+                    android:text="@string/title_send"
+                    android:textSize="@dimen/text_size_21_33"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutReachingTime" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LateEntryFragment"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="idproofViewModel"
+            type="com.task.pguserdemoapp.ui.registration.RegistrationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/padding_15">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_capture_selfie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/title_capture_selfie"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_outer"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:background="@drawable/rounded_corner_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@+id/text_capture_selfie" />
+
+        <ImageView
+            android:id="@+id/image_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintBottom_toBottomOf="@+id/image_outer"
+            app:layout_constraintEnd_toEndOf="@+id/image_outer"
+            app:layout_constraintStart_toStartOf="@+id/image_outer"
+            app:layout_constraintTop_toTopOf="@+id/image_outer" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/title_tap_here"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@+id/image_outer"
+            app:layout_constraintStart_toStartOf="@+id/image_outer"
+            app:layout_constraintTop_toBottomOf="@+id/image_camera" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_aadhar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="@dimen/padding_15"
+            android:background="@drawable/rounded_corner_trans_back"
+            android:padding="@dimen/text_input_layout_padding"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_outer">
+
+            <EditText
+                android:id="@+id/aadhar_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="@string/hint_aadhar_number"
+                android:imeOptions="actionDone"
+                android:maxLength="12"
+                android:paddingLeft="@dimen/edittext_padding_left"
+                android:singleLine="true"
+                app:addTextChangedListener="@{idproofViewModel.getaadhar}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/upload_aadhar_number"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/padding_15"
+            android:background="@drawable/rounded_corner_trans_back"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dp"
+            android:singleLine="true"
+            android:text="@string/title_upload_aadhar"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_aadhar" />
+
+        <ImageView
+            android:id="@+id/camera_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_15"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintBottom_toBottomOf="@+id/upload_aadhar_number"
+            app:layout_constraintEnd_toEndOf="@+id/upload_aadhar_number"
+            app:layout_constraintTop_toTopOf="@+id/upload_aadhar_number" />
+
+        <TextView
+            android:id="@+id/text_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_10"
+            android:text="@string/title_or"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="@+id/upload_aadhar_number"
+            app:layout_constraintRight_toLeftOf="@+id/camera_icon"
+            app:layout_constraintTop_toTopOf="@+id/upload_aadhar_number" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_10"
+            android:src="@drawable/ic_upload"
+            app:layout_constraintBottom_toBottomOf="@+id/upload_aadhar_number"
+            app:layout_constraintRight_toLeftOf="@+id/text_or"
+            app:layout_constraintTop_toTopOf="@+id/upload_aadhar_number" />
+
+        <TextView
+            android:id="@+id/image_upload_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/title_upload_aadhar_description"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upload_aadhar_number" />
+
+        <TextView
+            android:id="@+id/text_another_proof"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/padding_15"
+            android:background="@drawable/rounded_corner_trans_back"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dp"
+            android:text="@string/title_proof2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_upload_details" />
+
+
+        <TextView
+            android:id="@+id/upload_another_proof"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/padding_15"
+            android:background="@drawable/rounded_corner_trans_back"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dp"
+            android:singleLine="true"
+            android:text="@string/title_upload_proof"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_another_proof" />
+
+        <ImageView
+            android:id="@+id/another_proof_camera_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_15"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintBottom_toBottomOf="@+id/upload_another_proof"
+            app:layout_constraintEnd_toEndOf="@+id/upload_another_proof"
+            app:layout_constraintTop_toTopOf="@+id/upload_another_proof" />
+
+        <TextView
+            android:id="@+id/another_text_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_10"
+            android:text="@string/title_or"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="@+id/upload_another_proof"
+            app:layout_constraintRight_toLeftOf="@+id/another_proof_camera_icon"
+            app:layout_constraintTop_toTopOf="@+id/upload_another_proof" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_10"
+            android:src="@drawable/ic_upload"
+            app:layout_constraintBottom_toBottomOf="@+id/upload_another_proof"
+            app:layout_constraintRight_toLeftOf="@+id/another_text_or"
+            app:layout_constraintTop_toTopOf="@+id/upload_another_proof" />
+
+
+        <TextView
+            android:id="@+id/another_image_upload_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/title_upload_aadhar_description"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upload_another_proof" />
+
+        <Button
+            style="@style/SubmitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{idproofViewModel::onCompleteClicked}"
+            android:text="@string/title_complete"
+            app:layout_constraintTop_toBottomOf="@+id/another_image_upload_details" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

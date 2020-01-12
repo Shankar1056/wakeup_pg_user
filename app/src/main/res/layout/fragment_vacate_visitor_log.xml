@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="vacateViewModel"
+            type="com.task.pguserdemoapp.ui.vacatepg.VacateViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewVacateLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="@dimen/margin_21_33"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_112"
+        android:layout_marginTop="@dimen/margin_26_67"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:onClick="@{vacateViewModel::onRegisterClicked}"
+        android:text="@string/title_register"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size_18_67"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/textViewVacateLog" />
+
+    <ImageView
+        android:id="@+id/imageViewRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4"
+
+        android:visibility="@{vacateViewModel.registerVisibility ? View.VISIBLE : View.GONE}"
+        android:minHeight="@dimen/padding_5"
+        android:background="@color/mikadoYellow"
+       app:layout_constraintLeft_toLeftOf="@+id/textViewRegister"
+        app:layout_constraintRight_toRightOf="@+id/textViewRegister"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRegister" />
+
+    <TextView
+        android:id="@+id/textViewLogs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_26_67"
+        android:layout_marginEnd="@dimen/margin_112"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:onClick="@{vacateViewModel::onLogsClicked}"
+
+        android:text="@string/title_logs"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size_18_67"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVacateLog" />
+
+    <ImageView
+        android:id="@+id/imageViewLogs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4"
+        android:minHeight="@dimen/padding_5"
+        android:background="@color/mikadoYellow"
+        android:visibility="@{vacateViewModel.logsVisibility ? View.VISIBLE : View.GONE}"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewLogs"
+        app:layout_constraintRight_toRightOf="@+id/textViewLogs"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLogs" />
+    <FrameLayout
+        android:id="@+id/layout_frame_visitor_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_15"
+        android:layout_marginTop="@dimen/padding_10"
+        android:layout_marginRight="@dimen/padding_15"
+        android:paddingBottom="@dimen/padding_75"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmptyVisitorLog" >
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/textViewEmptyVisitorLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_5"
+        android:layout_marginEnd="@dimen/padding_5"
+        android:layout_marginTop="@dimen/margin_8"
+        android:background="@color/colorGrey"
+        android:textSize="0.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLogs"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vacate_navigation"
+    app:startDestination="@+id/navigation_vacate_home"
+    app:labelVisibilityMode="labeled"
+    >
+
+    <fragment
+        android:id="@+id/navigation_vacate_home"
+        android:name="com.task.pguserdemoapp.ui.vacatepg.fragment.VacateHomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_vacate_home" />
+
+    <fragment
+        android:id="@+id/navigation_vacate_my_complaints"
+        android:name="com.task.pguserdemoapp.ui.vacatepg.fragment.VacateComplaintFragment"
+        android:label="@string/title_complaint"
+        tools:layout="@layout/fragment_vacate_complaint" />
+
+    <fragment
+        android:id="@+id/navigation_vacate_visitor_log"
+        android:name="com.task.pguserdemoapp.ui.vacatepg.fragment.VacateVisitorLogFragment"
+        android:label="@string/title_visitor_log"
+        tools:layout="@layout/fragment_vacate_visitor_log" />
+
+
+    <fragment
+        android:id="@+id/navigation_vacate_info"
+        android:name="com.task.pguserdemoapp.ui.vacatepg.fragment.VacateVisitorLogFragment"
+        android:label="@string/title_vacate"
+        tools:layout="@layout/fragment_vacate_visitor_log" />
+</navigation>

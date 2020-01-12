@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="vacateViewModel"
+            type="com.task.pguserdemoapp.ui.vacatepg.VacateViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="@dimen/padding_10"
+    android:background="@drawable/rounded_corner_transperent_button"
+    >
+
+
+    <TextView
+        android:id="@+id/textViewDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/title_vacate_pg_info"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size_21_33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDialogInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="VacateInfoText"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@id/textViewDialogTitle"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBoxAccept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/check_accept"
+        android:gravity="left|center_vertical"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDialogInfo"/>
+
+    <Button
+        android:id="@+id/buttonDialogCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_50"
+        android:background="@drawable/rounded_corner_trans_back"
+        android:text="@string/title_cancel"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAccept" />
+
+    <Button
+        android:id="@+id/buttonIntimate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_50"
+        android:text="@string/title_intimate"
+        android:onClick="@{vacateViewModel::onIntimateClicked}"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/margin_20"
+        android:background="@drawable/rounded_corner_submit_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAccept" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
