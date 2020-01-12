@@ -120,7 +120,7 @@ class RegistrationViewModel(val app: Application) : AndroidViewModel(app) {
 
     fun onEmergencyClicked(view: View) {
         switchHOmePage.value = true
-        clickedCount.value = 1
+        clickedCount.value = 2
 
     }
 

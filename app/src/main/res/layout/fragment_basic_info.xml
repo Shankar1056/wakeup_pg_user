@@ -8,10 +8,8 @@
             type="com.task.pguserdemoapp.ui.registration.RegistrationViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -21,12 +19,14 @@
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_15">
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/padding_15"
+                android:paddingBottom="100dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/text_input_layout_name"
@@ -47,7 +47,6 @@
                         android:hint="@string/hint_full_name"
                         android:text="@{fragmentBasicInfo.regisrationDataModel.name}"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
                         android:paddingLeft="@dimen/edittext_padding_left"
                         android:singleLine="true"
                         android:textSize="15sp"
@@ -90,8 +89,8 @@
                         android:fontFamily="@font/roboto_medium"
                         android:hint="@string/hint_mobile_number"
                         android:imeOptions="actionNext"
-                        android:inputType="phone"
                         android:maxLength="10"
+                        android:inputType="number"
                         android:paddingLeft="@dimen/edittext_padding_left"
                         android:singleLine="true"
                         android:textSize="15sp"
@@ -117,7 +116,8 @@
                         android:fontFamily="@font/roboto_medium"
                         android:hint="@string/hint_alternate_mobile_number"
                         android:imeOptions="actionNext"
-                        android:inputType="phone"
+                        android:inputType="number"
+                        android:digits="@string/input_only_number"
                         android:paddingLeft="@dimen/edittext_padding_left"
                         android:maxLength="10"
                         android:singleLine="true"
@@ -205,7 +205,6 @@
                         android:fontFamily="@font/roboto_medium"
                         android:hint="@string/hint_name_of_institute"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
                         android:paddingLeft="@dimen/edittext_padding_left"
                         android:singleLine="true"
                         android:textSize="15sp"
@@ -231,7 +230,6 @@
                         android:fontFamily="@font/roboto_medium"
                         android:hint="@string/hint_institute_address"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
                         android:paddingLeft="@dimen/edittext_padding_left"
                         android:singleLine="true"
                         android:textSize="15sp"
@@ -257,7 +255,6 @@
                         android:fontFamily="@font/roboto_medium"
                         android:hint="@string/hint_institute_id"
                         android:imeOptions="actionDone"
-                        android:inputType="textEmailAddress"
                         android:paddingLeft="@dimen/edittext_padding_left"
                         android:singleLine="true"
                         android:textSize="15sp"
